@@ -2,13 +2,15 @@ name: FQ SnapVolt 1 Driver Compiler & Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
     tags:
       - 'v*'
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
@@ -23,7 +25,7 @@ jobs:
         rustc --crate-type=lib ai_acceleration.rs
         rustc --crate-type=lib vm_acceleration.rs
 
-    - name: Upload Build Artifacts (Drivers & DTB)
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: voltx-snapvolt1-release-build
