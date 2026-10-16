@@ -42,5 +42,8 @@ jobs:
           voltx_release/drivers/*.rlib
           voltx_release/dtb/*.dtb
           voltx_release/spec.yaml
+        body_path: README.md  # <-- Ini memaparkan nota dari README.md pada Release
+        draft: false
+        prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
