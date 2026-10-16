@@ -8,3 +8,18 @@
 * `voltx_release/drivers/` (.rlib files)
 * `voltx_release/dtb/` (Device Tree Blobs)
 * `voltx_release/spec.yaml` (Manifest)
+
+---
+
+## 🛡️ FQ Solo Studio & Community
+
+**FQ SnapVolt 1** is developed under **FQ Solo Studio**, focusing on high-performance 16-core RISC-V SoC architecture, 8GB UMA zero-copy optimization, and hardware-assisted virtualization acceleration.
+
+* 💬 **Community Discussions:** Join our GitHub Discussions / Discord to test software drivers and discuss OS porting.
+* 🛠️ **Contributions:** Driver fixes, `.dtb` patches, and system integration specs are welcome via Pull Requests.
+
+## 📜 License
+
+All software drivers, device tree blobs (`.dtb`), and specification files in this repository are licensed under the [MIT License](LICENSE).
+
+> **Hardware IP Notice:** The underlying hardware design, HDL source files (Amaranth), and layout/GDSII for **FQ SnapVolt 1** remain proprietary and strictly copyrighted by **FQ Solo Studio**.
