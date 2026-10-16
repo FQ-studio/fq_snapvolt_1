@@ -1,0 +1,21 @@
+# Abaikan semua fail & folder di dalam folder induk (Closed Source Protection)
+*
+
+# Jangan abaikan fail .gitignore ini sendiri
+!.gitignore
+
+# Benarkan pengeluaran/release folder jika hendak dipublish secara berasingan
+!voltx_release/
+!voltx_release/**
+
+# Benarkan workflows jika ingin mengekalkan CI/CD
+!.github/
+!.github/**
+
+# Abaikan fail binaan sementara / biner Rust
+*.so
+*.rlib
+*.exe
+*.o
+*.a
+target/

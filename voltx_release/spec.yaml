@@ -1,0 +1,20 @@
+chip:
+  name: "FQ SnapVolt 1"
+  architecture: "RISC-V RV64GC"
+  cores: 16
+  memory: "8GB UMA"
+  design_aesthetic: "Futuristic + Gamer HUD"
+
+features:
+  - name: "DirectX Native Translator"
+    op_mode: 1
+  - name: "KVM System Virtualization"
+    op_mode: 2
+  - name: "Gaming FPS Lock Accelerator"
+    op_mode: 3
+  - name: "AI Acceleration Engine"
+    op_mode: 4
+
+security:
+  telemetry: "Blocked / Zero-Tracking"
+  kernel_isolation: "Strict"

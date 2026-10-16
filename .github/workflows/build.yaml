@@ -1,0 +1,44 @@
+name: FQ SnapVolt 1 Driver Compiler & Release
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Compile Rust Drivers
+      run: |
+        cd voltx_release/drivers
+        rustc --crate-type=lib voltx_alu_custom.rs
+        rustc --crate-type=lib ai_acceleration.rs
+        rustc --crate-type=lib vm_acceleration.rs
+
+    - name: Upload Build Artifacts (Drivers & DTB)
+      uses: actions/upload-artifact@v4
+      with:
+        name: voltx-snapvolt1-release-build
+        path: |
+          voltx_release/drivers/*.rlib
+          voltx_release/dtb/*.dtb
+          voltx_release/spec.yaml
+
+    - name: Create Automatic GitHub Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          voltx_release/drivers/*.rlib
+          voltx_release/dtb/*.dtb
+          voltx_release/spec.yaml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
