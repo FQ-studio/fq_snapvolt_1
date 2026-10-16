@@ -10,7 +10,7 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write   # Kebenaran rasmi untuk mencipta & memuat naik Release
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
