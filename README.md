@@ -23,3 +23,12 @@
 All software drivers, device tree blobs (`.dtb`), and specification files in this repository are licensed under the [MIT License](LICENSE).
 
 > **Hardware IP Notice:** The underlying hardware design, HDL source files (Amaranth), and layout/GDSII for **FQ SnapVolt 1** remain proprietary and strictly copyrighted by **FQ Solo Studio**.
+
+---
+
+## 💬 FQ Community
+
+Join **FQ Community** to collaborate on software drivers, discuss OS porting, and share integration insights for **FQ SnapVolt 1**:
+
+* **GitHub Discussions:** Ask questions, share ideas, and report driver performance.
+* **Pull Requests:** Submit `.rlib` driver improvements and device tree patches.
